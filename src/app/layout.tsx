@@ -1,6 +1,11 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { ThemeProvider } from "@/components/_components/theam-provider";
+import Header from "@/components/_components/Header";
+import Footer from "@/components/_components/Footer";
+import MaxWidthWrapper from "@/components/_components/MaxWidthWrapper";
+import { CustomSelector } from "@/components/_components/CustomSelector";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -10,6 +15,12 @@ const geistSans = localFont({
 const geistMono = localFont({
   src: "./fonts/GeistMonoVF.woff",
   variable: "--font-geist-mono",
+  weight: "100 900",
+});
+
+const orbitMax = localFont({
+  src: "./fonts/OrbitMaxenceDuterneVF.woff",
+  variable: "--font-orbit-max",
   weight: "100 900",
 });
 
@@ -26,9 +37,17 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${orbitMax.variable} antialiased`}
       >
-        {children}
+        <ThemeProvider attribute="class" defaultTheme="system">
+          <MaxWidthWrapper>
+            <CustomSelector>
+              <Header />
+              {children}
+              <Footer />
+            </CustomSelector>
+          </MaxWidthWrapper>
+        </ThemeProvider>
       </body>
     </html>
   );
