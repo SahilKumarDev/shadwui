@@ -10,7 +10,7 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <div className="flex-center gap-2 pb-3 text-white-60 font-orbit-max text-sm tracking-wider underline underline-offset-4">
+    <div className="flex-center gap-2 pt-10 pb-4 text-white-60 font-orbit-max text-sm tracking-wider underline underline-offset-4">
       Developed For You By
       <TooltipProvider>
         <Tooltip>

@@ -1,33 +1,75 @@
 import React from "react";
+import Code from "./Code";
+import { Separator } from "../ui/separator";
+import { Card } from "../ui/card";
 
 const Guide = () => {
   return (
-    <>
-      <div>
-        <h1>description of your library using</h1>
+    <div className="relative">
+      <div className="flex items-center gap-4 justify-items-start">
+        <div className="rounded-full flex-center font-orbit-max border bg-zinc-950 py-4 dark:bg-zinc-900 text-base w-8 h-8">
+          1
+        </div>
+
+        <h4 className="font-orbit-max text-xl underline underline-offset-4">
+          Create a Next.js Project
+        </h4>
       </div>
-      <div>
-        <div>
-          Step one
-          <h1>
-            <span>First dtep create a next.js project by using these compond</span>
-            <code>npx create-next-app@lates </code>
-          </h1>
-          <h1>---------------------</h1>
-          <h1>add shadcn ui in your project </h1>
-          <code>npx shadcn@latest button</code>
-        </div>
-        <div>
-          Step two
-          <h1>Select the ui according to your project from here</h1>
-          <h2>Click on copy and paste it in your project</h2>
-        </div>
-        <div>
-          Step three
-          <h1>check the ui of your project</h1>
-        </div>
+
+      <div className="ml-12 py-2">
+        <p>
+          Create a fresh next.js project by run the following command. To begin
+          using this open-source component library, project. Run the following
+          command to get the latest version of Next.js set up:
+        </p>
+        <Code type="npx">create-next-app@latest</Code>
       </div>
-    </>
+
+      <Separator
+        orientation="vertical"
+        className="bg-zinc-950 border dark:bg-zinc-900 absolute top-8 -z-10 left-4   h-80"
+      />
+
+      <div className="flex items-center gap-4 justify-items-start">
+        <div className="rounded-full flex-center font-orbit-max border bg-zinc-950 py-4 dark:bg-zinc-900 text-base w-8 h-8">
+          2
+        </div>
+
+        <h4 className="font-orbit-max text-xl underline underline-offset-4">
+          Add Shadcn to the project of Next.js.
+        </h4>
+      </div>
+
+      <div className="ml-12 py-2">
+        <p>
+          After Create the next.js project, add a shadcn to your project run the
+          following command in your terminal
+        </p>
+        <Code type="npx">shadcn@latest init</Code>
+      </div>
+
+      <div className="flex items-center gap-4 justify-items-start">
+        <div className="rounded-full flex-center font-orbit-max border bg-zinc-950 py-4 dark:bg-zinc-900 text-base w-8 h-8">
+          3
+        </div>
+
+        <h4 className="font-orbit-max text-xl underline underline-offset-4">
+          Choose and Integrate UI Components
+        </h4>
+      </div>
+
+      <div className="ml-12 py-2">
+        <p>
+          Browse the collection of components in this library and select the
+          ones that best fit your project.
+        </p>
+        <ul className="list-disc ml-4">
+          <li>Navigate to the component of your choice.</li>
+          <li>Copy the component's code.</li>
+          <li>Paste it directly into your project.</li>
+        </ul>
+      </div>
+    </div>
   );
 };
 

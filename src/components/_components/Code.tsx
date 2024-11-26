@@ -14,7 +14,7 @@ const Code = ({ children, type }: { children: string; type: string }) => {
   };
 
   return (
-    <code className="mb-4 mt-6 max-h-[650px] overflow-x-auto rounded-lg border bg-zinc-950 py-4 dark:bg-zinc-900 flex items-center justify-between px-4">
+    <code className="mb-4 mt-3 max-h-[650px] overflow-x-auto rounded-lg border bg-zinc-950 py-4 dark:bg-zinc-900 flex items-center justify-between px-4">
       <div className="space-x-2">
         <span className="text-purple-500">{type}</span>
         <span className="text-blue-500">{children}</span>

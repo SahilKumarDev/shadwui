@@ -8,8 +8,7 @@ export default function RootLayout({
   return (
     <div>
       <BreadCrumb />
-
-      {children}
+      <div className="px-5">{children}</div>
     </div>
   );
 }

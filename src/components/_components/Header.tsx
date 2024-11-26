@@ -10,9 +10,13 @@ function Header() {
   return (
     <>
       <div className="px-6 py-4 flex-between">
-        <h1 className="font-orbit-max text-2xl">UiComponents</h1>
+        <Link href="/" className="font-orbit-max text-2xl">
+          UiComponents
+        </Link>
         <div className="flex-center gap-2">
-          <Button variant={"ghost"}>Components</Button>
+          <Link href={"/components"}>
+            <Button variant={"ghost"}>Components</Button>
+          </Link>
 
           <Link href={"/"}>
             <Badge className="rounded-full text-sm space-x-1">
