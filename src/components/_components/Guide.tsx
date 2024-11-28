@@ -1,13 +1,12 @@
 import React from "react";
 import Code from "./Code";
 import { Separator } from "../ui/separator";
-import { Card } from "../ui/card";
 
 const Guide = () => {
   return (
     <div className="relative">
       <div className="flex items-center gap-4 justify-items-start">
-        <div className="rounded-full flex-center font-orbit-max border bg-zinc-950 py-4 dark:bg-zinc-900 text-base w-8 h-8">
+        <div className="rounded-full flex-center font-orbit-max border dark:bg-zinc-900 py-4 bg-white text-base w-8 h-8">
           1
         </div>
 
@@ -27,11 +26,11 @@ const Guide = () => {
 
       <Separator
         orientation="vertical"
-        className="bg-zinc-950 border dark:bg-zinc-900 absolute top-8 -z-10 left-4   h-80"
+        className="bg-zinc-950 border dark:bg-zinc-900 absolute top-8 -z-10 left-4  h-[30rem] lg:h-80"
       />
 
       <div className="flex items-center gap-4 justify-items-start">
-        <div className="rounded-full flex-center font-orbit-max border bg-zinc-950 py-4 dark:bg-zinc-900 text-base w-8 h-8">
+        <div className="rounded-full flex-center font-orbit-max border dark:bg-zinc-900 py-4 bg-white text-base w-8 h-8">
           2
         </div>
 
@@ -49,7 +48,7 @@ const Guide = () => {
       </div>
 
       <div className="flex items-center gap-4 justify-items-start">
-        <div className="rounded-full flex-center font-orbit-max border bg-zinc-950 py-4 dark:bg-zinc-900 text-base w-8 h-8">
+        <div className="rounded-full flex-center font-orbit-max border dark:bg-zinc-900 py-4 bg-white text-base w-8 h-8">
           3
         </div>
 
@@ -65,7 +64,7 @@ const Guide = () => {
         </p>
         <ul className="list-disc ml-4">
           <li>Navigate to the component of your choice.</li>
-          <li>Copy the component's code.</li>
+          <li>Copy the component&apos;s code.</li>
           <li>Paste it directly into your project.</li>
         </ul>
       </div>

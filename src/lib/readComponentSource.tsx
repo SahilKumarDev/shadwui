@@ -12,9 +12,6 @@ export const readComponentSource = async (
     directory,
     `${componentName}.tsx`
   );
-  console.log("====================================");
-  console.log("file path ", filePath);
-  console.log("====================================");
   try {
     const source = await fs.readFile(filePath, "utf8");
     return source;

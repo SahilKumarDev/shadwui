@@ -3,7 +3,7 @@ import ComponentPage from "@/page/ComponentPage";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Input and Textarea Components - Origin UI",
+  title: "Input and Textarea Components - composts ui",
   description:
     "A collection of beautiful and accessible input components built with Tailwind CSS and Next.js.",
 };
@@ -19,7 +19,7 @@ const inputFiles = [
   "input-02",
 ];
 
-const file = [...inputFiles];
+// const file = [...inputFiles];
 
 export default function Page() {
   return (
