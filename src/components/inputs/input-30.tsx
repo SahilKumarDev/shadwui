@@ -4,10 +4,12 @@ import { Label } from "@/components/ui/label";
 export default function InputDemo() {
   return (
     <div className="space-y-2">
-      <Label htmlFor="input-02">
-        Required input <span className="text-destructive">*</span>
-      </Label>
-      <Input id="input-02" placeholder="Email" type="email" required />
+      <Label htmlFor="input-30">File input</Label>
+      <Input
+        id="input-30"
+        className="p-0 pe-3 file:me-3 file:border-0 file:border-e"
+        type="file"
+      />
     </div>
   );
 }

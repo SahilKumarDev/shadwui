@@ -3,18 +3,19 @@ import CenterText from "@/components/_components/CenterText";
 
 const ComponentsPage = () => {
   const componentsItems = [
-    { name: "Alerts", isAvailable: true },
-    { name: "Banners", isAvailable: true },
-    { name: "Buttons", isAvailable: true },
-    { name: "Checkboxs", isAvailable: true },
-    { name: "Dialogs", isAvailable: true },
+    { name: "Alerts", isAvailable: false },
+    { name: "Banners", isAvailable: false },
+    { name: "Buttons", isAvailable: false },
+    { name: "Checkboxs", isAvailable: false },
+    { name: "Dialogs", isAvailable: false },
+    { name: "Inputs", isAvailable: true },
     { name: "Headings", isAvailable: false },
-    { name: "Notifications", isAvailable: true },
-    { name: "Radios", isAvailable: true },
-    { name: "Switchs", isAvailable: true },
-    { name: "Selects", isAvailable: true },
-    { name: "Sliders", isAvailable: true },
-    { name: "Textareas", isAvailable: true },
+    { name: "Notifications", isAvailable: false },
+    { name: "Radios", isAvailable: false },
+    { name: "Switchs", isAvailable: false },
+    { name: "Selects", isAvailable: false },
+    { name: "Sliders", isAvailable: false },
+    { name: "Textareas", isAvailable: false },
   ];
 
   return (

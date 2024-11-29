@@ -11,24 +11,26 @@ const Box = ({
   children: React.ReactNode;
   redirect?: string;
   isAvailable: boolean;
-}) => {
-  return (
+}) =>
+  isAvailable ? (
     <Link href={redirect || "/"}>
       <Button
-        variant={"outline"}
+        variant="outline"
         className="lg:text-lg text-base dark:text-white/80 dark:hover:text-white hover:text-black/80 font-orbit-max py-6 px-4 lg:py-8 lg:px-8 justify-between w-full rounded-sm"
       >
         {children}
-        {isAvailable ? (
-          <GoArrowRight size={24} />
-        ) : (
-          <h4 className="text-white-60 text-base hover:text-black/80">
-            Available soon..
-          </h4>
-        )}
+        <GoArrowRight size={24} />
       </Button>
     </Link>
+  ) : (
+    <Button
+      variant="outline"
+      className="lg:text-lg text-base dark:text-white/80 dark:hover:text-white hover:text-black/80 font-orbit-max py-6 px-4 lg:py-8 lg:px-8 justify-between w-full rounded-sm"
+      disabled
+    >
+      {children}
+      <h4 className="text-white-60 text-base">Available soon..</h4>
+    </Button>
   );
-};
 
 export default Box;

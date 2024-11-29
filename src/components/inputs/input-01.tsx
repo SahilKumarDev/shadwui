@@ -1,11 +1,11 @@
-import React from 'react'
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 
-const Input01 = () => {
+export default function InputDemo() {
   return (
-    <div>Input01</div>
-  )
+    <div className="space-y-2">
+      <Label htmlFor="input-01">Simple input</Label>
+      <Input id="input-01" placeholder="Email" type="email" />
+    </div>
+  );
 }
-
-export default Input01
-
- 

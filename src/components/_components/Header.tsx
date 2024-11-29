@@ -13,7 +13,7 @@ function Header() {
         <Link href="/" className="font-orbit-max text-2xl">
           UiComponents
         </Link>
-        <div className="flex-center gap-2 hidden">
+        <div className="flex-center gap-2 hidden lg:flex">
           <Link href={"/components"}>
             <Button variant={"ghost"}>Components</Button>
           </Link>
