@@ -4,7 +4,7 @@ import CenterText from "@/components/_components/CenterText";
 const ComponentsPage = () => {
   const componentsItems = [
     { name: "Alerts", isAvailable: true },
-    { name: "Banners", isAvailable: false },
+    { name: "Banners", isAvailable: true },
     { name: "Buttons", isAvailable: true },
     { name: "Checkboxs", isAvailable: false },
     { name: "Dialogs", isAvailable: false },
