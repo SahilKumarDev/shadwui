@@ -6,7 +6,7 @@ const ComponentsPage = () => {
     { name: "Alerts", isAvailable: true },
     { name: "Banners", isAvailable: true },
     { name: "Buttons", isAvailable: true },
-    { name: "Checkboxs", isAvailable: false },
+    { name: "Checkboxs", isAvailable: true },
     { name: "Dialogs", isAvailable: false },
     { name: "Inputs", isAvailable: true },
     { name: "Headings", isAvailable: false },
