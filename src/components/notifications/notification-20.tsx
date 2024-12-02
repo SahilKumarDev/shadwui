@@ -1,14 +1,8 @@
-// Dependencies: pnpm install lucide-react
-
-// This is a standalone toast implementation using Radix UI Primitives directly
-// For a more opinionated solution, see notification-21.tsx which uses the Toaster component
-
 "use client";
 
 import { Button } from "@/components/ui/button";
 import {
   Toast,
-  ToastAction,
   ToastClose,
   ToastDescription,
   ToastProvider,
@@ -24,7 +18,11 @@ interface UseProgressTimerProps {
   onComplete?: () => void;
 }
 
-function useProgressTimer({ duration, interval = 100, onComplete }: UseProgressTimerProps) {
+function useProgressTimer({
+  duration,
+  interval = 100,
+  onComplete,
+}: UseProgressTimerProps) {
   const [progress, setProgress] = useState(duration);
   const timerRef = useRef(0);
   const timerState = useRef({
@@ -69,7 +67,10 @@ function useProgressTimer({ duration, interval = 100, onComplete }: UseProgressT
     const state = timerState.current;
     if (!state.isPaused) {
       cleanup();
-      state.remaining = Math.max(0, state.remaining - (Date.now() - state.startTime));
+      state.remaining = Math.max(
+        0,
+        state.remaining - (Date.now() - state.startTime)
+      );
       state.isPaused = true;
     }
   }, [cleanup]);
@@ -110,7 +111,7 @@ export default function NotificationDemo() {
         start();
       }
     },
-    [reset, start],
+    [reset, start]
   );
 
   const handleButtonClick = useCallback(() => {
@@ -130,7 +131,12 @@ export default function NotificationDemo() {
       <Button variant="outline" onClick={handleButtonClick}>
         Custom toast
       </Button>
-      <Toast open={open} onOpenChange={handleOpenChange} onPause={pause} onResume={resume}>
+      <Toast
+        open={open}
+        onOpenChange={handleOpenChange}
+        onPause={pause}
+        onResume={resume}
+      >
         <div className="flex w-full justify-between gap-3">
           <CircleCheck
             className="mt-0.5 shrink-0 text-emerald-500"
@@ -144,11 +150,6 @@ export default function NotificationDemo() {
               <ToastDescription>
                 It demonstrates that the task or request has been processed.
               </ToastDescription>
-            </div>
-            <div>
-              <ToastAction altText="Undo changes" asChild>
-                <Button size="sm">Undo changes</Button>
-              </ToastAction>
             </div>
           </div>
           <ToastClose asChild>

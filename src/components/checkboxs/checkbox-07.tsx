@@ -7,7 +7,7 @@ export default function CheckboxDemo() {
       <Checkbox id="checkbox-07" />
       <Label htmlFor="checkbox-07">
         I agree to the{" "}
-        <a className="underline" href="https://originui.com" target="_blank">
+        <a className="underline" href="#" target="_blank">
           terms of service
         </a>
       </Label>

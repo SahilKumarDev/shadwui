@@ -24,7 +24,9 @@ export default function NotificationDemo() {
                 <div className="flex grow justify-between gap-12">
                   <p className="text-sm">Message sent</p>
                   <div className="whitespace-nowrap text-sm">
-                    <button className="text-sm font-medium hover:underline">View</button>{" "}
+                    <button className="text-sm font-medium hover:underline">
+                      View
+                    </button>{" "}
                     <span className="mx-1 text-muted-foreground">·</span>{" "}
                     <button
                       className="text-sm font-medium hover:underline"

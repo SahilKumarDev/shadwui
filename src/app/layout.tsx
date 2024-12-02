@@ -6,6 +6,7 @@ import Header from "@/components/_components/Header";
 import Footer from "@/components/_components/Footer";
 import MaxWidthWrapper from "@/components/_components/MaxWidthWrapper";
 import { CustomSelector } from "@/components/_components/CustomSelector";
+import { Toaster } from "@/components/ui/sonner";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -48,6 +49,7 @@ export default function RootLayout({
             </CustomSelector>
           </MaxWidthWrapper>
         </ThemeProvider>
+        <Toaster />
       </body>
     </html>
   );

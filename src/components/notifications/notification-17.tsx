@@ -1,5 +1,3 @@
-// Dependencies: pnpm install lucide-react
-
 import { Button } from "@/components/ui/button";
 import { X } from "lucide-react";
 import Image from "next/image";
@@ -8,7 +6,6 @@ import AvatarImg from "@/public/avatar-32-01.jpg";
 
 export default function NotificationDemo() {
   return (
-    // To make the notification fixed, add classes like `fixed bottom-4 right-4` to the container element.
     <div className="z-[100] max-w-[400px] rounded-lg border border-border bg-background p-4 shadow-lg shadow-black/5">
       <div className="flex gap-3">
         <Image
@@ -21,11 +18,17 @@ export default function NotificationDemo() {
         <div className="flex grow flex-col gap-3">
           <div className="space-y-1">
             <p className="text-sm text-muted-foreground">
-              <a className="font-medium text-foreground hover:underline" href="#">
+              <a
+                className="font-medium text-foreground hover:underline"
+                href="#"
+              >
                 Mary Palmer
               </a>{" "}
               mentioned you in{" "}
-              <a className="font-medium text-foreground hover:underline" href="#">
+              <a
+                className="font-medium text-foreground hover:underline"
+                href="#"
+              >
                 project-campaign-02
               </a>
               .

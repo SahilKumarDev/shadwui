@@ -1,11 +1,8 @@
-// Dependencies: pnpm install lucide-react
-
 import { Button } from "@/components/ui/button";
 import { Radio, X } from "lucide-react";
 
 export default function NotificationDemo() {
   return (
-    // To make the notification fixed, add classes like `fixed bottom-4 right-4` to the container element.
     <div className="z-[100] max-w-[400px] rounded-lg border border-border bg-background p-4 shadow-lg shadow-black/5">
       <div className="flex items-center gap-2">
         <div
@@ -17,7 +14,9 @@ export default function NotificationDemo() {
         <div className="flex grow items-center gap-12">
           <div className="space-y-1">
             <p className="text-sm font-medium">Live in 27 hours</p>
-            <p className="text-xs text-muted-foreground">November 20 at 8:00 PM.</p>
+            <p className="text-xs text-muted-foreground">
+              November 20 at 8:00 PM.
+            </p>
           </div>
           <Button size="sm">Notify me</Button>
         </div>

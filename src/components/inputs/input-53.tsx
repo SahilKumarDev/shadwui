@@ -35,7 +35,7 @@ export default function InputDemo() {
           id="input-53"
           className="pe-9"
           type="text"
-          defaultValue=" npm install origin-ui"
+          defaultValue="npm install sahil kumar dev"
           readOnly
         />
         <TooltipProvider delayDuration={0}>
