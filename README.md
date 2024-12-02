@@ -1,36 +1,41 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+ Shadw-ui is an extensive collection of copy-and-paste components for quickly building app UIs. It includes hundreds of components and is constantly updated with new stuff.
+
+**Demo** → [https://shadwui.com](https://shadwui.com)
+
+## Overview
+
+Shadw UI streamlines UI development by providing:
+
+- Consistent styling
+- Hundreds of customizable components
+- Regular updates and new component additions
+- All components support light and dark mode out of the box
 
 ## Getting Started
 
-First, run the development server:
+Shadw UI is designed to integrate seamlessly with Next.js projects, but the components are also compatible with any React-based project. The components follow shadcn conventions, so they’ll feel familiar to anyone who has used shadcn before.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
- npm dev
-# or
-bun dev
-```
+**1. Set up the required files:**
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Install `shadcn ui` in your project.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Note: If you're not using shadcn.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+**2. Copy and paste the components you need into your project.**
+ 
+Note: Browse the Shadw UI library and copy the components you need into your project.
 
-## Learn More
+## Contributing
 
-To learn more about Next.js, take a look at the following resources:
+We welcome contributions to Shadw UI!   
+- If you have a new component idea, feel free to submit a pull request.
+- If you find a bug, please report it in the issue section.
+- If you want to help with documentation, we'd love to have you on board.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Terms of Use
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Feel free to use these components in personal and commercial projects. However, while the tutorials and demos are available for your use as-is, they cannot be redistributed or resold. Let’s keep things fair and respect each other’s work.
+ 
+## Notes
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is a work in progress, and we’re continuously working to improve and expand this collection. We’d love to hear your feedback or see your contributions as the project evolves!
