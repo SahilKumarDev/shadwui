@@ -7,6 +7,7 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import Link from "next/link";
+import OwnerImg from "@/public/owner.png";
 
 const Footer = () => {
   return (
@@ -18,9 +19,9 @@ const Footer = () => {
             <Link href={"https://sahilkumardev.netlify.app"} target="_blank">
               <Avatar className="h-7 w-7 bg-opacity-25">
                 <AvatarImage
-                  src="https://github.com/shadcn.png"
-                  alt="@shadcn"
-                  className="opacity-50 hover:opacity-100"
+                  src={OwnerImg.src}
+                  alt="@owner"
+                  className="opacity-50 hover:opacity-100 bg-slate-600 bg-center"
                 />
                 <AvatarFallback>CN</AvatarFallback>
               </Avatar>
