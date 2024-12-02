@@ -3,9 +3,9 @@ import ComponentPage from "@/page/ComponentPage";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Input and Textarea Components - composts ui",
+  title: "Notifications | Sahil kumar dev",
   description:
-    "A collection of beautiful and accessible notification components built with Tailwind CSS and Next.js.",
+    "A beautiful collection of notification components built with using Shadcn UI and TailwindCSS.",
 };
 
 const notificationDir = "notifications";
@@ -32,21 +32,21 @@ const notificationFiles = [
   "notification-20",
   "notification-21",
   "notification-22",
-  "notification-23", 
+  "notification-23",
 ];
 
-const fileCount = [...notificationFiles];
+const fileCount = [...notificationFiles].length;
 
 export default function Page() {
   return (
     <GridPageLayout
-      heading="Inputs"
-      description={`All description are here ${fileCount.length}`}
+      heading="Notifications"
+      description={`A beautiful collection of ${fileCount} notification components built with using Shadcn UI and TailwindCSS.`}
     >
       {notificationFiles.map((componentName) => {
         return (
           <ComponentPage
-          className="grid-center"
+            className="grid-center"
             key={componentName}
             directory={notificationDir}
             componentName={componentName}

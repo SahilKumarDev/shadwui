@@ -3,9 +3,9 @@ import ComponentPage from "@/page/ComponentPage";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Input and Textarea Components - composts ui",
+  title: "Buttons | Sahil kumar dev",
   description:
-    "A collection of beautiful and accessible button components built with Tailwind CSS and Next.js.",
+    "A beautiful collection of button components built with using Shadcn UI and TailwindCSS.",
 };
 
 const buttonDir = "buttons";
@@ -63,18 +63,18 @@ const buttonFiles = [
   "button-51",
 ];
 
-const fileCount = [...buttonFiles];
+const fileCount = [...buttonFiles].length;
 
 export default function Page() {
   return (
     <GridPageLayout
-      heading="Inputs"
-      description={`All description are here ${fileCount.length}`}
+      heading="Buttons"
+      description={`A beautiful collection of ${fileCount} button components built with using Shadcn UI and TailwindCSS.`}
     >
       {buttonFiles.map((componentName) => {
         return (
           <ComponentPage
-            className="flex justify-center "
+            className="flex justify-center"
             key={componentName}
             directory={buttonDir}
             componentName={componentName}

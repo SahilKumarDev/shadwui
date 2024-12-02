@@ -3,9 +3,9 @@ import ComponentPage from "@/page/ComponentPage";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Input and Textarea Components - composts ui",
+  title: "Switchs | Sahil kumar dev",
   description:
-    "A collection of beautiful and accessible switch components built with Tailwind CSS and Next.js.",
+    "A beautiful collection of switch components built with using Shadcn UI and TailwindCSS.",
 };
 
 const switchDir = "switchs";
@@ -29,13 +29,13 @@ const switchFiles = [
   "switch-17",
 ];
 
-const fileCount = [...switchFiles];
+const fileCount = [...switchFiles].length;
 
 export default function Page() {
   return (
     <GridPageLayout
-      heading="Inputs"
-      description={`All description are here ${fileCount.length}`}
+      heading="Switchs"
+      description={`A beautiful collection of ${fileCount} switch components built with using Shadcn UI and TailwindCSS.`}
     >
       {switchFiles.map((componentName) => {
         return (

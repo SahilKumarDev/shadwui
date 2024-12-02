@@ -12,10 +12,12 @@ const GridPageLayout = ({
   description,
 }: GridPageLayoutProps) => {
   return (
-    <div className="space-y-20">
+    <div className="space-y-16">
       <div className="text-center space-y-1 lg:space-y-2 font-orbit-max">
-        <h1 className="lg:text-6xl text-4xl">{heading}</h1>
-        <p className="lg:text-xl text-base text-white-60 tracking-wide">
+        <h1 className="lg:text-6xl text-4xl underline underline-offset-8 decoration-[#FF7700]">
+          {heading}
+        </h1>
+        <p className="lg:text-xl text-base dark:text-white-60 tracking-wide text-black/70">
           {description}
         </p>
       </div>

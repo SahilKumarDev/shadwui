@@ -3,11 +3,10 @@ import ComponentPage from "@/page/ComponentPage";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Input and Textarea Components - composts ui",
+  title: "Banners | Sahil kumar dev",
   description:
-    "A collection of beautiful and accessible banner components built with Tailwind CSS and Next.js.",
+    "A beautiful collection of banner components built with using Shadcn UI and TailwindCSS.",
 };
-
 const bannerDir = "banners";
 const bannerFiles = [
   "banner-01",
@@ -27,13 +26,13 @@ const bannerFiles = [
   "banner-15",
 ];
 
-const fileCount = [...bannerFiles];
+const fileCount = [...bannerFiles].length;
 
 export default function Page() {
   return (
     <GridPageLayout
-      heading="Banner"
-      description={`All description are here ${fileCount.length}`}
+      heading="Banners"
+      description={`A beautiful collection of ${fileCount} banner components built with using Shadcn UI and TailwindCSS.`}
     >
       {bannerFiles.map((componentName) => {
         return (

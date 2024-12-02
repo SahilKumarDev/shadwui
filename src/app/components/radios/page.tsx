@@ -3,9 +3,9 @@ import ComponentPage from "@/page/ComponentPage";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Input and Textarea Components - composts ui",
+  title: "Radios | Sahil kumar dev",
   description:
-    "A collection of beautiful and accessible radio components built with Tailwind CSS and Next.js.",
+    "A beautiful collection of radio components built with using Shadcn UI and TailwindCSS.",
 };
 
 const radioDir = "radios";
@@ -28,21 +28,21 @@ const radioFiles = [
   "radio-16",
   "radio-17",
   "radio-18",
-  "radio-19", 
+  "radio-19",
 ];
 
-const fileCount = [...radioFiles];
+const fileCount = [...radioFiles].length;
 
 export default function Page() {
   return (
     <GridPageLayout
-      heading="radio"
-      description={`All description are here ${fileCount.length}`}
+      heading="Radios"
+      description={`A beautiful collection of ${fileCount} radio components built with using Shadcn UI and TailwindCSS.`}
     >
       {radioFiles.map((componentName) => {
         return (
           <ComponentPage
-          className="gri-center"
+            className="gri-center"
             key={componentName}
             directory={radioDir}
             componentName={componentName}

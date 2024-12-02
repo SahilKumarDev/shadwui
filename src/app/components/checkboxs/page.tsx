@@ -3,9 +3,9 @@ import ComponentPage from "@/page/ComponentPage";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Input and Textarea Components - composts ui",
+  title: "Checkboxs | Sahil kumar dev",
   description:
-    "A collection of beautiful and accessible checkbox components built with Tailwind CSS and Next.js.",
+    "A beautiful collection of checkbox components built with using Shadcn UI and TailwindCSS.",
 };
 
 const checkboxDir = "checkboxs";
@@ -30,13 +30,13 @@ const checkboxFiles = [
   "checkbox-18",
 ];
 
-const fileCount = [...checkboxFiles];
+const fileCount = [...checkboxFiles].length;
 
 export default function Page() {
   return (
     <GridPageLayout
-      heading="Inputs"
-      description={`All description are here ${fileCount.length}`}
+      heading="Checkboxs"
+      description={`A beautiful collection of ${fileCount} checkbox components built with using Shadcn UI and TailwindCSS.`}
     >
       {checkboxFiles.map((componentName) => {
         return (

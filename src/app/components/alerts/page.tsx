@@ -3,9 +3,9 @@ import ComponentPage from "@/page/ComponentPage";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Input and Textarea Components - composts ui",
+  title: "Alerts | Sahil kumar dev",
   description:
-    "A collection of beautiful and accessible alert components built with Tailwind CSS and Next.js.",
+    "A beautiful collection of alert components built with using Shadcn UI and TailwindCSS.",
 };
 
 const alertDir = "alerts";
@@ -26,11 +26,14 @@ const alertFiles = [
   "alert-14",
 ];
 
-// const file = [...alertFiles];
+const fileCount = [...alertFiles].length;
 
 export default function Page() {
   return (
-    <GridPageLayout heading="Alerts" description="All description are here">
+    <GridPageLayout
+      heading="Alerts"
+      description={`A beautiful collection of alerts ${fileCount} components built with using Shadcn UI and TailwindCSS.`}
+    >
       {alertFiles.map((componentName) => {
         return (
           <ComponentPage

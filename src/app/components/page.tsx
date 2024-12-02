@@ -7,7 +7,6 @@ const ComponentsPage = () => {
     { name: "Banners", isAvailable: true },
     { name: "Buttons", isAvailable: true },
     { name: "Checkboxs", isAvailable: true },
-    { name: "Dialogs", isAvailable: false },
     { name: "Inputs", isAvailable: true },
     { name: "Headings", isAvailable: false },
     { name: "Notifications", isAvailable: true },
@@ -20,8 +19,11 @@ const ComponentsPage = () => {
 
   return (
     <div className="space-y-8">
-      <CenterText description="Explore our component library">
-        Component Catalog
+      <CenterText
+        className="underline underline-offset-8 decoration-[#FF7700]"
+        description="Discover components with seamless light and dark mode support, featuring consistent animations for a unified user experience."
+      >
+        Components Page
       </CenterText>
       <div className="grid-layout">
         {componentsItems.map((component) => (
