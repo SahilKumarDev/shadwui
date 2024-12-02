@@ -3,7 +3,7 @@ import ComponentPage from "@/page/ComponentPage";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Checkboxs | Sahil kumar dev",
+  title: "Checkboxs | Shadw ui",
   description:
     "A beautiful collection of checkbox components built with using Shadcn UI and TailwindCSS.",
 };

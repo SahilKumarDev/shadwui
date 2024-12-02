@@ -1,14 +1,16 @@
-import Guide from "@/components/_components/Guide";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
+import Guide from "@/components/_components/Guide";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import { StarSvg } from "@/utils/IconSvg";
 import Link from "next/link";
 
 const Home = () => {
   return (
     <>
-      <div className="mx-auto w-full max-w-7xl pt-4 lg:pt-10 space-y-2  lg:space-y-4 px-4">
+      <div className="background-gradient" />
+
+      <div className="mx-auto w-full max-w-7xl pt-4 lg:pt-10 space-y-2 lg:space-y-4 px-4">
         <Badge
           variant={"secondary"}
           className="rounded-full gap-2 py-1 px-3 text-sm"
@@ -21,7 +23,7 @@ const Home = () => {
             Beautiful UI components built with Tailwind CSS and Shadcn Ui.
           </h1>
           <p className="lg:text-xl text-base text-white-60 tracking-wide">
-            Components UI is an Huge collection of copy and paste components for
+            Shadw ui is an Huge collection of copy and paste components for
             quickly building app, webs UI using tailwind css and shadcn ui for
             the faster building of UI. It‘s free, open-source, and ready to drop
             into your projects.
@@ -34,7 +36,10 @@ const Home = () => {
             </Button>
           </Link>
           <Link href={"/"}>
-            <Button variant={"outline"} className="text-lg font-orbit-max py-5 w-full">
+            <Button
+              variant={"outline"}
+              className="text-lg font-orbit-max py-5 w-full"
+            >
               Rate on Github
             </Button>
           </Link>

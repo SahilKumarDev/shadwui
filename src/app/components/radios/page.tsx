@@ -3,7 +3,7 @@ import ComponentPage from "@/page/ComponentPage";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Radios | Sahil kumar dev",
+  title: "Radios | Shadw ui",
   description:
     "A beautiful collection of radio components built with using Shadcn UI and TailwindCSS.",
 };

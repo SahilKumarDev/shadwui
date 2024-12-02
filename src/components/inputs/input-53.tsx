@@ -35,7 +35,7 @@ export default function InputDemo() {
           id="input-53"
           className="pe-9"
           type="text"
-          defaultValue="npm install sahil kumar dev"
+          defaultValue="npm install Shadw ui"
           readOnly
         />
         <TooltipProvider delayDuration={0}>

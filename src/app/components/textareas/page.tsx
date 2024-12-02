@@ -3,7 +3,7 @@ import ComponentPage from "@/page/ComponentPage";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Textareas | Sahil kumar dev",
+  title: "Textareas | Shadw ui",
   description:
     "A beautiful collection of textarea components built with using Shadcn UI and TailwindCSS.",
 };

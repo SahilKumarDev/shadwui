@@ -3,7 +3,7 @@ import ComponentPage from "@/page/ComponentPage";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Sliders | Sahil kumar dev",
+  title: "Sliders | Shadw ui",
   description:
     "A beautiful collection of slider components built with using Shadcn UI and TailwindCSS.",
 };
