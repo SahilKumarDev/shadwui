@@ -22,12 +22,12 @@ function Header() {
             className="h-12 object-cover"
           />
         </Link>
-        <div className="flex-center gap-2 hidden lg:flex">
+        <div className="flex-center gap-2 ">
           <Link href={"/components"}>
             <Button variant={"ghost"}>Components</Button>
           </Link>
 
-          <Link href={"/"}>
+          <Link href={"/"} className="hidden md:block">
             <Badge className="rounded-full text-sm space-x-1">
               <FaGithub size={20} className="text-white dark:text-black/70" />
               <StarSvg fill="fill-zinc-600" />
