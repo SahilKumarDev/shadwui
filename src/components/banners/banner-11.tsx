@@ -1,9 +1,8 @@
-// Dependencies: pnpm install lucide-react
-
 "use client";
 
-import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 import { Download, LoaderCircle } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { useState } from "react";
 
 export default function BannerDemo() {
@@ -11,31 +10,30 @@ export default function BannerDemo() {
 
   const handleDownload = () => {
     setIsDownloading(true);
-    // Simulate download
     setTimeout(() => {
       setIsDownloading(false);
     }, 2000);
   };
 
   return (
-    <div className="bg-muted px-4 py-3 md:py-2">
-      <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2">
-        <p className="text-sm">
+    <Card className="py-4 bg-muted">
+      <CardContent className="py-0 flex flex-wrap items-center justify-center gap-x-4 gap-y-2">
+        <p className="text-sm line-clamp-1 text-center">
           <span className="font-medium">v2.1.0</span>
           <span className="mx-2 text-muted-foreground">•</span>
-          New features and improvements available
+          New features and bug fixes are available.
         </p>
         <Button
           size="sm"
           variant="outline"
           disabled={isDownloading}
           onClick={handleDownload}
-          className="min-w-24"
+          className="min-w-24 text-sm"
         >
           {isDownloading ? (
             <>
               <LoaderCircle
-                className="-ms-0.5 me-2 animate-spin"
+                className="-ms-0.5 animate-spin"
                 size={16}
                 strokeWidth={2}
                 aria-hidden="true"
@@ -44,12 +42,12 @@ export default function BannerDemo() {
             </>
           ) : (
             <>
-              <Download size={16} className="-ms-0.5 me-2" aria-hidden="true" />
+              <Download size={16} className="-ms-0.5" aria-hidden="true" />
               Update now
             </>
           )}
         </Button>
-      </div>
-    </div>
+      </CardContent>
+    </Card>
   );
 }

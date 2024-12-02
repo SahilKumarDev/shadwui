@@ -1,10 +1,10 @@
-// Dependencies: pnpm install lucide-react
-
 "use client";
 
-import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, CircleCheck, X } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { useState } from "react";
+import Link from "next/link";
 
 export default function BannerDemo() {
   const [isVisible, setIsVisible] = useState(true);
@@ -12,8 +12,8 @@ export default function BannerDemo() {
   if (!isVisible) return null;
 
   return (
-    <div className="bg-emerald-400 bg-opacity-20 px-4 py-3 text-emerald-700 dark:bg-opacity-10 dark:text-emerald-600">
-      <div className="flex gap-2">
+    <Card className="py-4 bg-emerald-400 bg-opacity-20 text-emerald-700 dark:bg-opacity-10 dark:text-emerald-600">
+      <CardContent className="py-0 flex">
         <div className="flex grow gap-3">
           <CircleCheck
             className="mt-0.5 shrink-0 opacity-60"
@@ -21,9 +21,14 @@ export default function BannerDemo() {
             strokeWidth={2}
             aria-hidden="true"
           />
-          <div className="flex grow flex-col justify-between gap-2 md:flex-row">
-            <p className="text-sm">Your request was completed without any issues. Great job!</p>
-            <a href="#" className="group whitespace-nowrap text-sm font-medium">
+          <div className="space-y-2">
+            <p className="text-sm">
+              Your request was completed without any issues. Great job!
+            </p>
+            <Link
+              href="#"
+              className="group whitespace-nowrap text-sm font-medium"
+            >
               Learn more
               <ArrowRight
                 className="-mt-0.5 ms-1 inline-flex opacity-60 transition-transform group-hover:translate-x-0.5"
@@ -31,7 +36,7 @@ export default function BannerDemo() {
                 strokeWidth={2}
                 aria-hidden="true"
               />
-            </a>
+            </Link>
           </div>
         </div>
         <Button
@@ -47,7 +52,7 @@ export default function BannerDemo() {
             aria-hidden="true"
           />
         </Button>
-      </div>
-    </div>
+      </CardContent>
+    </Card>
   );
 }

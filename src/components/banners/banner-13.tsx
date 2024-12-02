@@ -1,9 +1,8 @@
-// Dependencies: pnpm install lucide-react
-
 "use client";
 
-import { Button } from "@/components/ui/button";
 import { ArrowRight, CircleAlert, X } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import { useState } from "react";
 
 export default function BannerDemo() {
@@ -12,8 +11,8 @@ export default function BannerDemo() {
   if (!isVisible) return null;
 
   return (
-    <div className="bg-red-400 bg-opacity-20 px-4 py-3 text-red-700 dark:bg-opacity-10 dark:text-red-600">
-      <div className="flex gap-2">
+    <Card className="py-4 bg-red-400 bg-opacity-20 text-red-700 dark:bg-opacity-10 dark:text-red-600">
+      <CardContent className="py-0 flex">
         <div className="flex grow gap-3">
           <CircleAlert
             className="mt-0.5 shrink-0 opacity-60"
@@ -21,9 +20,10 @@ export default function BannerDemo() {
             strokeWidth={2}
             aria-hidden="true"
           />
-          <div className="flex grow flex-col justify-between gap-2 md:flex-row">
+          <div className="space-y-2">
             <p className="text-sm">
-              We couldn&lsquo;t complete your request. Please try again or check your connection.
+              We couldn&lsquo;t complete your request. Please try again or check
+              your connection.
             </p>
             <a href="#" className="group whitespace-nowrap text-sm font-medium">
               Learn more
@@ -49,7 +49,7 @@ export default function BannerDemo() {
             aria-hidden="true"
           />
         </Button>
-      </div>
-    </div>
+      </CardContent>
+    </Card>
   );
 }

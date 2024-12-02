@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function BannerDemo() {
   return (
-    <Card className="flex items-center justify-center py-4">
+    <Card className="py-4">
       <CardContent className="py-0">
         <p>
           Get the most out of your app with real-time updates and analytics.

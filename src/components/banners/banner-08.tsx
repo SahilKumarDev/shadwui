@@ -1,7 +1,6 @@
-// Dependencies: pnpm install lucide-react
-
 "use client";
 
+import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Rocket, X } from "lucide-react";
 import { useState } from "react";
@@ -12,20 +11,21 @@ export default function BannerDemo() {
   if (!isVisible) return null;
 
   return (
-    <div className="dark bg-muted px-4 py-3 text-foreground">
-      <div className="flex gap-2 md:items-center">
-        <div className="flex grow gap-3 md:items-center">
+    <Card className="py-4">
+      <CardContent className="py-0 flex">
+        <div className="flex grow gap-3">
           <div
             className="flex size-9 shrink-0 items-center justify-center rounded-full bg-primary/15 max-md:mt-0.5"
             aria-hidden="true"
           >
             <Rocket className="opacity-80" size={16} strokeWidth={2} />
           </div>
-          <div className="flex grow flex-col justify-between gap-3 md:flex-row md:items-center">
+          <div className="space-y-2">
             <div className="space-y-0.5">
-              <p className="text-sm font-medium">Boost your experience with Origin UI</p>
+              <p>Boost your experience</p>
               <p className="text-sm text-muted-foreground">
-                The new feature is live! Try it out and let us know what you think.
+                The new feature is live! Try it out and let us know what you
+                think.
               </p>
             </div>
             <div className="flex gap-2 max-md:flex-wrap">
@@ -48,7 +48,7 @@ export default function BannerDemo() {
             aria-hidden="true"
           />
         </Button>
-      </div>
-    </div>
+      </CardContent>
+    </Card>
   );
 }

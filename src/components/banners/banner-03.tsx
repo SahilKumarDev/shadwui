@@ -5,7 +5,7 @@ import { ArrowRight, Eclipse } from "lucide-react";
 
 export default function BannerDemo() {
   return (
-    <Card className="flex items-center justify-center py-4">
+    <Card className="py-4">
       <CardContent className="py-0">
         <div className="flex grow gap-2">
           <Eclipse

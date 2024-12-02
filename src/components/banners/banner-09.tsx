@@ -1,13 +1,13 @@
-// Dependencies: pnpm install lucide-react
-
 "use client";
 
+import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { TicketPercent, X } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 
-// Define the sale end date - eg: new Date('2024-12-31T23:59:59');
-const saleEndDate = new Date(Date.now() + 9 * 60 * 60 * 1000 + 45 * 60 * 1000 + 24 * 1000); // Setting 9h 45m 24s from now for demo purposes
+const saleEndDate = new Date(
+  Date.now() + 9 * 60 * 60 * 1000 + 45 * 60 * 1000 + 24 * 1000
+);
 
 interface TimeLeft {
   days: number;
@@ -33,12 +33,20 @@ export default function BannerDemo() {
       const difference = saleEndDate.getTime() - now.getTime();
 
       if (difference <= 0) {
-        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0, isExpired: true });
+        setTimeLeft({
+          days: 0,
+          hours: 0,
+          minutes: 0,
+          seconds: 0,
+          isExpired: true,
+        });
         return;
       }
 
       const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const hours = Math.floor(
+        (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+      );
       const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
       const seconds = Math.floor((difference % (1000 * 60)) / 1000);
 
@@ -51,7 +59,6 @@ export default function BannerDemo() {
       });
     };
 
-    // Calculate immediately and then every second
     calculateTimeLeft();
     const timer = setInterval(calculateTimeLeft, 1000);
 
@@ -61,20 +68,21 @@ export default function BannerDemo() {
   if (!isVisible || timeLeft.isExpired) return null;
 
   return (
-    <div className="dark bg-muted px-4 py-3 text-foreground">
-      <div className="flex gap-2 md:items-center">
-        <div className="flex grow gap-3 md:items-center">
+    <Card className="py-4">
+      <CardContent className="py-0 flex">
+        <div className="flex grow gap-3">
           <div
             className="flex size-9 shrink-0 items-center justify-center rounded-full bg-primary/15 max-md:mt-0.5"
             aria-hidden="true"
           >
             <TicketPercent className="opacity-80" size={16} strokeWidth={2} />
           </div>
-          <div className="flex grow flex-col justify-between gap-3 md:flex-row md:items-center">
+          <div className="space-y-2">
             <div className="space-y-0.5">
               <p className="text-sm font-medium">Black Friday Sale!</p>
               <p className="text-sm text-muted-foreground">
-                It kicks off today and is available for just 24 hours—don&lsquo;t miss out!
+                It kicks off today and is available for just 24
+                hours—don&lsquo;t miss out!
               </p>
             </div>
             <div className="flex gap-3 max-md:flex-wrap">
@@ -117,7 +125,7 @@ export default function BannerDemo() {
             aria-hidden="true"
           />
         </Button>
-      </div>
-    </div>
+      </CardContent>
+    </Card>
   );
 }

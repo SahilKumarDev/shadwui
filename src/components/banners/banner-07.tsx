@@ -1,7 +1,6 @@
-// Dependencies: pnpm install lucide-react
-
 "use client";
 
+import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Eclipse, X } from "lucide-react";
 import { useState } from "react";
@@ -12,18 +11,19 @@ export default function BannerDemo() {
   if (!isVisible) return null;
 
   return (
-    <div className="dark bg-muted px-4 py-3 text-foreground md:py-2">
-      <div className="flex gap-2 md:items-center">
-        <div className="flex grow gap-3 md:items-center md:justify-center">
+    <Card className="flex items-center justify-center py-4">
+      <CardContent className="py-0 flex">
+        <div className="flex grow gap-3">
           <Eclipse
-            className="shrink-0 opacity-60 max-md:mt-0.5"
+            className="shrink-0 opacity-60 mt-1"
             size={16}
             strokeWidth={2}
             aria-hidden="true"
           />
-          <div className="flex flex-col justify-between gap-3 md:flex-row md:items-center">
-            <p className="text-sm">
-              It&lsquo;s live and ready to use! Start exploring the latest addition to your toolkit.
+          <div className="space-y-2">
+            <p >
+              It&lsquo;s live and ready to use! Start exploring the latest
+              addition to your toolkit.
             </p>
             <div className="flex gap-2 max-md:flex-wrap">
               <Button size="sm" className="rounded-full">
@@ -45,7 +45,7 @@ export default function BannerDemo() {
             aria-hidden="true"
           />
         </Button>
-      </div>
-    </div>
+      </CardContent>
+    </Card>
   );
 }

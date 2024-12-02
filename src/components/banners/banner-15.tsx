@@ -1,9 +1,8 @@
-// Dependencies: pnpm install lucide-react
-
 "use client";
 
-import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, Info, X } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { useState } from "react";
 
 export default function BannerDemo() {
@@ -12,8 +11,8 @@ export default function BannerDemo() {
   if (!isVisible) return null;
 
   return (
-    <div className="bg-blue-400 bg-opacity-20 px-4 py-3 text-blue-700 dark:bg-opacity-10 dark:text-blue-600">
-      <div className="flex gap-2">
+    <Card className="py-4 bg-blue-400 bg-opacity-20 text-blue-700 dark:bg-opacity-10 dark:text-blue-600">
+      <CardContent className="py-0 flex">
         <div className="flex grow gap-3">
           <Info
             className="mt-0.5 shrink-0 opacity-60"
@@ -21,8 +20,10 @@ export default function BannerDemo() {
             strokeWidth={2}
             aria-hidden="true"
           />
-          <div className="flex grow flex-col justify-between gap-2 md:flex-row">
-            <p className="text-sm">Your request was completed without any issues. Great job!</p>
+          <div className="space-y-2">
+            <p className="text-sm">
+              Your request was completed without any issues. Great job!
+            </p>
             <a href="#" className="group whitespace-nowrap text-sm font-medium">
               Learn more
               <ArrowRight
@@ -47,7 +48,7 @@ export default function BannerDemo() {
             aria-hidden="true"
           />
         </Button>
-      </div>
-    </div>
+      </CardContent>
+    </Card>
   );
 }
