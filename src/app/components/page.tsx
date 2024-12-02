@@ -8,13 +8,14 @@ const ComponentsPage = () => {
     { name: "Buttons", isAvailable: true },
     { name: "Checkboxs", isAvailable: true },
     { name: "Inputs", isAvailable: true },
-    { name: "Headings", isAvailable: false },
     { name: "Notifications", isAvailable: true },
     { name: "Radios", isAvailable: true },
     { name: "Switchs", isAvailable: true },
     { name: "Selects", isAvailable: true },
     { name: "Sliders", isAvailable: true },
     { name: "Textareas", isAvailable: true },
+
+    { name: "Headings", isAvailable: false },
   ];
 
   return (
