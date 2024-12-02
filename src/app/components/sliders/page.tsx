@@ -46,7 +46,6 @@ export default function Page() {
       {sliderFiles.map((componentName) => {
         return (
           <ComponentPage
-            className=""
             key={componentName}
             directory={sliderDir}
             componentName={componentName}

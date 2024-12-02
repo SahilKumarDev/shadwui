@@ -16,7 +16,7 @@ export default function SliderDemo() {
         <Slider
           defaultValue={[50]}
           step={10}
-          showTooltip={true}
+          // showTooltip={true}
           aria-label="Slider with labels and tooltip"
         />
       </div>
