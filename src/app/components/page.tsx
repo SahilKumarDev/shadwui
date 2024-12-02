@@ -11,7 +11,7 @@ const ComponentsPage = () => {
     { name: "Inputs", isAvailable: true },
     { name: "Headings", isAvailable: false },
     { name: "Notifications", isAvailable: true },
-    { name: "Radios", isAvailable: false },
+    { name: "Radios", isAvailable: true },
     { name: "Switchs", isAvailable: true },
     { name: "Selects", isAvailable: false },
     { name: "Sliders", isAvailable: true },
