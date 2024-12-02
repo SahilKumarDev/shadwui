@@ -1,23 +1,28 @@
-// Dependencies: pnpm install lucide-react
+import { Card, CardContent } from "@/components/ui/card";
+import Link from "next/link";
 
 import { ArrowRight, Eclipse } from "lucide-react";
 
 export default function BannerDemo() {
   return (
-    <div className="dark bg-muted px-4 py-3 text-foreground">
-      <div className="flex flex-col justify-between gap-2 md:flex-row">
-        <div className="flex grow gap-3">
+    <Card className="flex items-center justify-center py-4">
+      <CardContent className="py-0">
+        <div className="flex grow gap-2">
           <Eclipse
-            className="mt-0.5 shrink-0 opacity-60"
+            className="shrink-0 opacity-60 mt-1"
             size={16}
             strokeWidth={2}
             aria-hidden="true"
           />
-          <div className="flex grow flex-col justify-between gap-2 md:flex-row md:items-center">
-            <p className="text-sm">
-              We just added something awesome to make your experience even better.
+          <div className=" ">
+            <p>
+              We just added something awesome to make your experience even
+              better.
             </p>
-            <a href="#" className="group whitespace-nowrap text-sm font-medium">
+            <Link
+              href="#"
+              className="group whitespace-nowrap text-sm font-medium"
+            >
               Learn more
               <ArrowRight
                 className="-mt-0.5 ms-1 inline-flex opacity-60 transition-transform group-hover:translate-x-0.5"
@@ -25,10 +30,10 @@ export default function BannerDemo() {
                 strokeWidth={2}
                 aria-hidden="true"
               />
-            </a>
+            </Link>
           </div>
         </div>
-      </div>
-    </div>
+      </CardContent>
+    </Card>
   );
 }
