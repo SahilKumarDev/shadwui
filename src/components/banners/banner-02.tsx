@@ -1,23 +1,18 @@
-// Dependencies: pnpm install lucide-react
-
-import { Eclipse } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card"; 
+import Link from "next/link";
 
 export default function BannerDemo() {
   return (
-    <div className="dark bg-muted px-4 py-3 text-foreground">
-      <p className="text-center text-sm">
-        <Eclipse
-          className="-mt-0.5 me-3 inline-flex opacity-60"
-          size={16}
-          strokeWidth={2}
-          aria-hidden="true"
-        />
-        Get the most out of your app with real-time updates and analytics{" "}
-        <span className="text-muted-foreground">·</span>{" "}
-        <a href="#" className="font-medium underline hover:no-underline">
+    <Card className="flex items-center justify-center py-4">
+      <CardContent className="py-0">
+        <h1>
+          Get the most out of your app with real-time updates and analytics.
+        </h1>
+
+        <Link href="#" className="font-medium underline hover:no-underline">
           Upgrade
-        </a>
-      </p>
-    </div>
+        </Link>
+      </CardContent>
+    </Card>
   );
 }
