@@ -1,13 +1,11 @@
-import { FaGithub } from "react-icons/fa6";
-import { Badge } from "../ui/badge";
 import { Separator } from "../ui/separator";
 import { TheamToggler } from "./TheamToggler";
-import { StarSvg } from "@/utils/IconSvg";
 import { Button } from "../ui/button";
 import Link from "next/link";
 import Image from "next/image";
 
 import Logo from "@/public/shadwui.png";
+import GithubData from "./GithubData";
 
 function Header() {
   return (
@@ -27,13 +25,7 @@ function Header() {
             <Button variant={"ghost"}>Components</Button>
           </Link>
 
-          <Link href={"/"} className="hidden md:block">
-            <Badge className="rounded-full text-sm space-x-1">
-              <FaGithub size={20} className="text-white dark:text-black/70" />
-              <StarSvg fill="fill-zinc-600" />
-              <span>3.3k</span>
-            </Badge>
-          </Link>
+          <GithubData />
 
           <TheamToggler />
         </div>

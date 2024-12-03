@@ -35,7 +35,10 @@ const Home = () => {
               Explore Components
             </Button>
           </Link>
-          <Link href={"/"}>
+          <Link
+            target="_blank"
+            href={"https://github.com/SahilKumarDev/shadwui"}
+          >
             <Button
               variant={"outline"}
               className="text-lg font-orbit-max py-5 w-full"
