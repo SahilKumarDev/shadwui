@@ -31,6 +31,7 @@ export const metadata: Metadata = {
   title: "Home | Shadw ui",
   description:
     "A beautiful huge collection of components built with using Shadcn UI and TailwindCSS.",
+  
 };
 
 export default function RootLayout({
