@@ -5,8 +5,11 @@ const ComponentsPage = () => {
   const componentsItems = [
     { name: "Alerts", isAvailable: true },
     { name: "Banners", isAvailable: true },
+    { name: "Badges", isAvailable: true, recentlyAdded: true },
     { name: "Buttons", isAvailable: true },
+    { name: "Breadcrumbs", isAvailable: true, recentlyAdded: true },
     { name: "Checkboxs", isAvailable: true },
+    { name: "Headings", isAvailable: true, recentlyAdded: true },
     { name: "Inputs", isAvailable: true },
     { name: "Notifications", isAvailable: true },
     { name: "Radios", isAvailable: true },
@@ -14,8 +17,6 @@ const ComponentsPage = () => {
     { name: "Selects", isAvailable: true },
     { name: "Sliders", isAvailable: true },
     { name: "Textareas", isAvailable: true },
-
-    { name: "Headings", isAvailable: false },
   ];
 
   return (
@@ -29,6 +30,7 @@ const ComponentsPage = () => {
       <div className="grid-layout">
         {componentsItems.map((component) => (
           <Box
+            recentlyAdded={component.recentlyAdded}
             key={component.name}
             redirect={`/components/${component.name.toLowerCase()}`}
             isAvailable={component.isAvailable}
