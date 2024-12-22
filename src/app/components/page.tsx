@@ -5,6 +5,7 @@ const ComponentsPage = () => {
   const componentsItems = [
     { name: "Alerts", isAvailable: true },
     { name: "Banners", isAvailable: true },
+    { name: "Badges", isAvailable: true, recentlyAdded: true },
     { name: "Buttons", isAvailable: true },
     { name: "Breadcrumbs", isAvailable: true, recentlyAdded: true },
     { name: "Checkboxs", isAvailable: true },
@@ -16,8 +17,6 @@ const ComponentsPage = () => {
     { name: "Selects", isAvailable: true },
     { name: "Sliders", isAvailable: true },
     { name: "Textareas", isAvailable: true },
-
-    { name: "Badges", isAvailable: false },
   ];
 
   return (
