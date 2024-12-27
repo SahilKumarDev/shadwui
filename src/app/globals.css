@@ -133,7 +133,7 @@ body {
   }
 
   .background-gradient {
-    @apply absolute top-0 z-[-1] h-full w-full bg-transparent bg-[radial-gradient(100%_50%_at_50%_0%,#FF772022,#FF770000_50%,#FF770000_100%)];
+    @apply absolute top-0 left-0 z-[-1] h-full w-full bg-transparent bg-[radial-gradient(100%_50%_at_50%_0%,#FF772022,#FF770000_50%,#FF770000_100%)];
   }
 }
 

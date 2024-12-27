@@ -3,9 +3,9 @@ import { Badge } from "@/components/ui/badge";
 import { StarSvg } from "@/utils/IconSvg";
 import Link from "next/link";
 
-const Hero = () => {
+const HeroSection = () => {
   return (
-    <div>
+    <div className="space-y-4 pb-4">
       <Badge
         variant={"secondary"}
         className="rounded-full gap-2 py-1 px-3 text-sm"
@@ -43,4 +43,4 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+export default HeroSection;
