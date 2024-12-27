@@ -1,6 +1,6 @@
 import React from "react";
-import Code from "./Code";
-import { Separator } from "../ui/separator";
+import Code from "../Code";
+import { Separator } from "../../ui/separator";
 
 const Guide = () => {
   return (

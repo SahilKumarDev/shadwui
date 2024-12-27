@@ -13,11 +13,42 @@ import { useState } from "react";
 const CopyButton = ({ componentSource }: { componentSource: string }) => {
   const [copied, setCopied] = useState<boolean>(false);
 
+  const extractReturnCode = (code: string) => {
+    try {
+      if (!code.includes("export default") && !code.includes("return")) {
+        return code.trim();
+      }
+
+      const returnRegex = /return\s*\(\s*([\s\S]*?)\s*\)\s*;?\s*\}/;
+      const returnMatch = code.match(returnRegex);
+      if (returnMatch && returnMatch[1]) {
+        return returnMatch[1]
+          .trim()
+          .split("\n")
+          .map((line) => line.trim())
+          .join("\n");
+      }
+
+      const exportRegex =
+        /export\s+default\s+function\s+\w+\s*\(\s*\)\s*\{[\s\S]*\}/;
+      const exportMatch = code.match(exportRegex);
+      if (exportMatch) {
+        return exportMatch[0].trim();
+      }
+
+      return code.trim();
+    } catch (error) {
+      console.error("Error extracting code:", error);
+      return code.trim();
+    }
+  };
+
   const handleCopy = async () => {
     try {
-      await navigator.clipboard.writeText(componentSource);
+      const extractedCode = extractReturnCode(componentSource);
+      await navigator.clipboard.writeText(extractedCode);
       setCopied(true);
-      setTimeout(() => setCopied(false), 1500);
+      setTimeout(() => setCopied(false), 2000);
     } catch (err) {
       console.error("Failed to copy text: ", err);
     }
@@ -81,7 +112,7 @@ const CopyButton = ({ componentSource }: { componentSource: string }) => {
             </Button>
           </TooltipTrigger>
           <TooltipContent className="border border-input bg-popover px-2 py-1 text-xs text-muted-foreground">
-            Copy
+            {copied ? "Copied!" : "Copy Text"}
           </TooltipContent>
         </Tooltip>
       </TooltipProvider>

@@ -3,13 +3,15 @@ import React from "react";
 interface GridPageLayoutProps {
   heading: string;
   description: string;
+  layout?: "page-grid-layout" | "page-grid-layout-two";
   children: React.ReactNode;
 }
 
 const GridPageLayout = ({
+  description,
   children,
   heading,
-  description,
+  layout,
 }: GridPageLayoutProps) => {
   return (
     <div className="space-y-16">
@@ -24,7 +26,7 @@ const GridPageLayout = ({
 
       <div className="px- sm:px-6">
         <div className="mx-auto  w-full max-w-8xl">
-          <div className="page-grid-layout"> {children}</div>
+          <div className={layout || "page-grid-layout"}>{children}</div>
         </div>
       </div>
     </div>

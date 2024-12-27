@@ -29,6 +29,7 @@ const fileCount = [...headingFiles].length;
 export default function Page() {
   return (
     <GridPageLayout
+      layout={"page-grid-layout-two"}
       heading="Headings"
       description={`A beautiful collection of ${fileCount} headings components built with using TailwindCSS.`}
     >
