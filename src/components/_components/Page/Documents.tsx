@@ -28,10 +28,10 @@ const TAB_ITEMS = [
 ];
 
 const Documents = () => (
-  <div className="flex-center px-1 lg:px-10">
+  <div className="  px-1 lg:px-10">
     <div>
       <h4 className="py-2 text-2xl font-bold dark:text-white">Documentation</h4>
-      <Tabs defaultValue="manual" className="space-y-3">
+      <Tabs defaultValue="vite" className="space-y-3">
         <TabsList>
           {TAB_ITEMS.map(({ value, icon: Icon, label }) => (
             <TabsTrigger key={value} value={value} className="gap-2">

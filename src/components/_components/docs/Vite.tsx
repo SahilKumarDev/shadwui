@@ -11,7 +11,7 @@ const Vite = () => {
         </div>
 
         <h4 className="font-orbit-max text-xl underline underline-offset-4">
-          Create a Next.js Project
+        Add Tailwind CSS
         </h4>
       </div>
 
