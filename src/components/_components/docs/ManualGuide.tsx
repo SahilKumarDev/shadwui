@@ -1,21 +1,85 @@
 import React from "react";
-import Code from "../Code";
-import { Separator } from "../../ui/separator";
+import { Separator } from "@/components/ui/separator"; 
+import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import Code from "../Code";
 import { CodeBlock } from "../CodeBloack";
-import { Badge } from "@/components/ui/badge";
 
-const code = `{
+type CodeBlockProps = {
+  language: string;
+  filename: string;
+  highlightLines?: number[];
+  code: string;
+};
+
+type StepContent = {
+  text?: React.ReactNode;
+  link?: {
+    href: string;
+    text: string;
+    isButton?: boolean;
+  };
+  command?: string;
+  code?: CodeBlockProps;
+};
+
+type Step = {
+  title: string;
+  contents: StepContent[];
+};
+
+const SetupGuide = ({ steps }: { steps: Step[] }) => (
+  <div className="relative">
+    <Separator
+      orientation="vertical"
+      className="bg-zinc-950 border dark:bg-zinc-900 absolute top-8 -z-10 left-5"
+    />
+
+    {steps.map((step, index) => (
+      <div key={index} className="mb-2">
+        <div className="flex items-center gap-2 justify-items-start">
+          <div className="rounded-full flex items-center justify-center font-orbit-max border-4 dark:border-[#0A0A0A] dark:bg-zinc-900 bg-white w-10 h-10 ">
+            {index + 1}
+          </div>
+          <h4 className="font-orbit-max text-xl underline underline-offset-4">
+            {step.title}
+          </h4>
+        </div>
+
+        <div className="ml-12 py-2 space-y-2">
+          {step.contents.map((content, i) => (
+            <div key={i} className="space-y-2">
+              {content.text}
+              {content.command && <Code text={content.command} type="npm" />}
+              {content.code && <CodeBlock {...content.code} />}
+              {content.link && (
+                <Link href={content.link.href} className="block mt-4">
+                  {content.link.isButton ? (
+                    <Button variant="outline">{content.link.text}</Button>
+                  ) : (
+                    <span className="underline">{content.link.text}</span>
+                  )}
+                </Link>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+    ))}
+  </div>
+);
+
+const ManualGuide = () => {
+  const tsConfigCode = `{
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
       "@/*": ["./*"]
     }
   }
-}
-`;
+}`;
 
-const tailwindCode = `/** @type {import('tailwindcss').Config} */
+  const tailwindConfigCode = `/** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: ["class"],
   content: ["app/**/*.{ts,tsx}", "components/**/*.{ts,tsx}"],
@@ -66,7 +130,7 @@ module.exports = {
   plugins: [require("tailwindcss-animate")],
 }`;
 
-const globalCode = `@tailwind base;
+  const globalCssCode = `@tailwind base;
 @tailwind components;
 @tailwind utilities;
 
@@ -124,17 +188,16 @@ const globalCode = `@tailwind base;
   body {
     @apply font-sans antialiased bg-background text-foreground;
   }
-}
-`;
+}`;
 
-const cnHelperCode = `import { clsx, type ClassValue } from "clsx"
+  const utilsCode = `import { clsx, type ClassValue } from "clsx"
 import { twMerge } from "tailwind-merge"
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }`;
 
-const jsonCode = `{
+  const componentsJsonCode = `{
   "$schema": "https://ui.shadcn.com/schema.json",
   "style": "new-york",
   "rsc": false,
@@ -154,169 +217,134 @@ const jsonCode = `{
     "hooks": "@/hooks"
   },
   "iconLibrary": "lucide"
-}
-`;
+}`;
 
-const ManualGuide = () => {
-  return (
-    <div className="relative">
-      <div className="flex items-center gap-4 justify-items-start">
-        <div className="rounded-full flex-center font-orbit-max border dark:bg-zinc-900 py-4 bg-white text-base w-8 h-8">
-          1
-        </div>
+  const steps: Step[] = [
+    {
+      title: "Add Tailwind CSS",
+      contents: [
+        {
+          text: (
+            <p>
+              Components are styled using Tailwind CSS. You need to install
+              Tailwind CSS in your project.
+            </p>
+          ),
+          link: {
+            href: "https://tailwindcss.com/docs/installation",
+            text: "Follow the Tailwind CSS installation instructions to get started.",
+          },
+        },
+      ],
+    },
+    {
+      title: "Add dependencies",
+      contents: [
+        {
+          text: (
+            <p>
+              After Create the next.js project, add a shadcn to your project run
+              the following command in your terminal
+            </p>
+          ),
+          command:
+            "install tailwindcss-animate class-variance-authority clsx tailwind-merge lucide-react",
+        },
+      ],
+    },
+    {
+      title: "Configure path aliases",
+      contents: [
+        {
+          text: <p>Configure the path aliases in your tsconfig.json file.</p>,
+          code: {
+            language: "tsx",
+            filename: "tsconfig.json",
+            highlightLines: [3, 4, 5, 6],
+            code: tsConfigCode,
+          },
+        },
+      ],
+    },
+    {
+      title: "Configure tailwind.config.js",
+      contents: [
+        {
+          text: (
+            <p>
+              Here&apos;s what my tailwind.config.js file looks
+              like:
+            </p>
+          ),
+          code: {
+            language: "tsx",
+            filename: "tailwind.config.js",
+            code: tailwindConfigCode,
+          },
+        },
+      ],
+    },
+    {
+      title: "Configure styles",
+      contents: [
+        {
+          text: (
+            <p>
+              Add the following to your styles/globals.css file. You can learn
+              more about using CSS variables for theming in the
+            </p>
+          ),
+          code: {
+            language: "tsx",
+            filename: "global.css",
+            code: globalCssCode,
+          },
+        },
+      ],
+    },
+    {
+      title: "Add a cn helper",
+      contents: [
+        {
+          code: {
+            language: "tsx",
+            filename: "lib/utils.ts",
+            code: utilsCode,
+          },
+        },
+      ],
+    },
+    {
+      title: "Create a components.json file",
+      contents: [
+        {
+          text: (
+            <p>Create a components.json file in the root of your project.</p>
+          ),
+          code: {
+            language: "tsx",
+            filename: "components.json",
+            code: componentsJsonCode,
+          },
+        },
+      ],
+    },
+    {
+      title: "That's it",
+      contents: [
+        {
+          text: <p>You can now start adding components to your project.</p>,
+          link: {
+            href: "https://ui.shadcn.com/docs/components/accordion",
+            text: "Get started",
+            isButton: true,
+          },
+        },
+      ],
+    },
+  ];
 
-        <h4 className="font-orbit-max text-xl underline underline-offset-4">
-          Add Tailwind CSS
-        </h4>
-      </div>
-
-      <div className="ml-12 py-2">
-        <p>
-          Components are styled using Tailwind CSS. You need to install Tailwind
-          CSS in your project.
-        </p>
-        <Link
-          href={"https://tailwindcss.com/docs/installation"}
-          className="underline pt-5"
-        >
-          Follow the Tailwind CSS installation instructions to get started.
-        </Link>
-      </div>
-
-      <Separator
-        orientation="vertical"
-        className="bg-zinc-950 border dark:bg-zinc-900 absolute top-8 -z-10 left-4  "
-      />
-
-      <div className="flex items-center gap-4 justify-items-start">
-        <div className="rounded-full flex-center font-orbit-max border dark:bg-zinc-900 py-4 bg-white text-base w-8 h-8">
-          2
-        </div>
-
-        <h4 className="font-orbit-max text-xl underline underline-offset-4">
-          Add dependencies
-        </h4>
-      </div>
-
-      <div className="ml-12 py-2">
-        <p>
-          After Create the next.js project, add a shadcn to your project run the
-          following command in your terminal
-        </p>
-        <Code type="npm">
-          install tailwindcss-animate class-variance-authority clsx
-          tailwind-merge lucide-react
-        </Code>
-      </div>
-
-      <div className="flex items-center gap-4 justify-items-start">
-        <div className="rounded-full flex-center font-orbit-max border dark:bg-zinc-900 py-4 bg-white text-base w-8 h-8">
-          3
-        </div>
-
-        <h4 className="font-orbit-max text-xl underline underline-offset-4">
-          Configure path aliases
-        </h4>
-      </div>
-
-      <div className="ml-12 py-2 space-y-2">
-        <p>
-          Configure the path aliases in your <code>tsconfig.json </code> file.
-        </p>
-
-        <CodeBlock
-          language="tsx"
-          filename="tsconfig.json"
-          highlightLines={[3, 4, 5, 6]}
-          code={code}
-        />
-      </div>
-
-      <div className="flex items-center gap-4 justify-items-start">
-        <div className="rounded-full flex-center font-orbit-max border dark:bg-zinc-900 py-4 bg-white text-base w-8 h-8">
-          4
-        </div>
-
-        <h4 className="font-orbit-max text-xl underline underline-offset-4">
-          Configure tailwind.config.js
-        </h4>
-      </div>
-
-      <div className="ml-12 py-2 space-y-2">
-        <p>
-          Here&apos;s what my <Badge>tailwind.config.js</Badge> file looks like:
-        </p>
-
-        <CodeBlock
-          language="tsx"
-          filename="tailwind.config.js"
-          code={tailwindCode}
-        />
-      </div>
-
-      <div className="flex items-center gap-4 justify-items-start">
-        <div className="rounded-full flex-center font-orbit-max border dark:bg-zinc-900 py-4 bg-white text-base w-8 h-8">
-          5
-        </div>
-
-        <h4 className="font-orbit-max text-xl underline underline-offset-4">
-          Configure styles
-        </h4>
-      </div>
-
-      <div className="ml-12 py-2 space-y-2">
-        <p>
-          Add the following to your styles/globals.css file. You can learn more
-          about using CSS variables for theming in the
-        </p>
-
-        <CodeBlock language="tsx" filename="global.css" code={globalCode} />
-      </div>
-
-      <div className="flex items-center gap-4 justify-items-start">
-        <div className="rounded-full flex-center font-orbit-max border dark:bg-zinc-900 py-4 bg-white text-base w-8 h-8">
-          6
-        </div>
-
-        <h4 className="font-orbit-max text-xl underline underline-offset-4">
-          Add a cn helper
-        </h4>
-      </div>
-
-      <div className="ml-12 py-2 space-y-2">
-        <CodeBlock language="tsx" filename="lib/utils.ts" code={cnHelperCode} />
-      </div>
-
-      <div className="flex items-center gap-4 justify-items-start">
-        <div className="rounded-full flex-center font-orbit-max border dark:bg-zinc-900 py-4 bg-white text-base w-8 h-8">
-          7
-        </div>
-
-        <h4 className="font-orbit-max text-xl underline underline-offset-4">
-          Create a components.json file
-        </h4>
-      </div>
-
-      <div className="ml-12 py-2 space-y-2">
-        <p>Create a components.json file in the root of your project.</p>
-        <CodeBlock language="tsx" filename="lib/utils.ts" code={jsonCode} />
-      </div>
-
-      <div className="flex items-center gap-4 justify-items-start">
-        <div className="rounded-full flex-center font-orbit-max border dark:bg-zinc-900 py-4 bg-white text-base w-8 h-8">
-          8
-        </div>
-
-        <h4 className="font-orbit-max text-xl underline underline-offset-4">
-          That&apos;s it
-        </h4>
-      </div>
-
-      <div className="ml-12 py-2 space-y-2">
-        <p>You can now start adding components to your project.</p>
-      </div>
-    </div>
-  );
+  return <SetupGuide steps={steps} />;
 };
 
 export default ManualGuide;

@@ -3,9 +3,9 @@
 import React, { useState } from "react";
 import { HiOutlineClipboardList, HiCheck } from "react-icons/hi";
 
-const Code = ({ children, type }: { children: string; type: string }) => {
+const Code = ({ text, type }: { text: string; type: string }) => {
   const [copied, setCopied] = useState(false);
-  const codeText = `${type} ${children}`;
+  const codeText = `${type} ${text}`;
 
   const handleCopy = () => {
     navigator.clipboard.writeText(codeText);
@@ -17,7 +17,7 @@ const Code = ({ children, type }: { children: string; type: string }) => {
     <code className="mb-4 mt-3 max-h-[650px] overflow-x-auto rounded-lg border bg-zinc-950 py-4 dark:bg-zinc-900 flex items-center justify-between px-4">
       <div className="space-x-2">
         <span className="text-[#DAB6FC]">{type}</span>
-        <span className="text-[#A7C7FB]">{children}</span>
+        <span className="text-[#A7C7FB]">{text}</span>
       </div>
 
       <button
