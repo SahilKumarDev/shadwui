@@ -43,16 +43,23 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${orbitMax.variable} antialiased`}
       >
-        <ThemeProvider attribute="class" defaultTheme="system">
-          <MaxWidthWrapper>
-            <CustomSelector>
-              <Header />
-              {children}
-              <Analytics />
-              <Footer />
-            </CustomSelector>
-          </MaxWidthWrapper>
-        </ThemeProvider>
+        <div
+          className="
+            overflow-clip inset-0 -z-10 h-full w-full bg-transparent bg-[size:14px_24px]
+            bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] 
+          "
+        >
+          <ThemeProvider attribute="class" defaultTheme="system">
+            <MaxWidthWrapper>
+              <CustomSelector>
+                <Header />
+                {children}
+                <Analytics />
+                <Footer />
+              </CustomSelector>
+            </MaxWidthWrapper>
+          </ThemeProvider>
+        </div>
         <Toaster />
       </body>
     </html>

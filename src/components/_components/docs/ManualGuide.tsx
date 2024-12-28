@@ -1,5 +1,5 @@
 import React from "react";
-import { Separator } from "@/components/ui/separator"; 
+import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Code from "../Code";
@@ -17,6 +17,7 @@ type StepContent = {
   link?: {
     href: string;
     text: string;
+    target?: string;
     isButton?: boolean;
   };
   command?: string;
@@ -53,7 +54,11 @@ const SetupGuide = ({ steps }: { steps: Step[] }) => (
               {content.command && <Code text={content.command} type="npm" />}
               {content.code && <CodeBlock {...content.code} />}
               {content.link && (
-                <Link href={content.link.href} className="block mt-4">
+                <Link
+                  href={content.link.href}
+                  className="block mt-4"
+                  target={content.link.target}
+                >
                   {content.link.isButton ? (
                     <Button variant="outline">{content.link.text}</Button>
                   ) : (
@@ -231,6 +236,7 @@ export function cn(...inputs: ClassValue[]) {
             </p>
           ),
           link: {
+            target: "_blank",
             href: "https://tailwindcss.com/docs/installation",
             text: "Follow the Tailwind CSS installation instructions to get started.",
           },
@@ -270,12 +276,7 @@ export function cn(...inputs: ClassValue[]) {
       title: "Configure tailwind.config.js",
       contents: [
         {
-          text: (
-            <p>
-              Here&apos;s what my tailwind.config.js file looks
-              like:
-            </p>
-          ),
+          text: <p>Here&apos;s what my tailwind.config.js file looks like:</p>,
           code: {
             language: "tsx",
             filename: "tailwind.config.js",
@@ -338,6 +339,7 @@ export function cn(...inputs: ClassValue[]) {
             href: "https://ui.shadcn.com/docs/components/accordion",
             text: "Get started",
             isButton: true,
+            target: "_blank",
           },
         },
       ],

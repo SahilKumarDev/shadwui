@@ -133,7 +133,7 @@ body {
   }
 
   .background-gradient {
-    @apply absolute top-0 left-0 z-[-1] h-full w-full bg-transparent bg-[radial-gradient(100%_50%_at_50%_0%,#FF772022,#FF770000_50%,#FF770000_100%)];
+    @apply absolute left-0 top-0 z-[-1] h-full w-full bg-transparent bg-[radial-gradient(100%_50%_at_50%_0%,#FF772022,#FF770000_50%,#FF770000_100%)];
   }
 }
 
@@ -151,6 +151,24 @@ body {
 }
 
 ::-webkit-scrollbar-thumb:hover {
+  background: #e6e4e4;
+  cursor: pointer;
+}
+
+::-webkit-scrollbar:horizontal {
+  height: 8px;
+}
+
+::-webkit-scrollbar-track:horizontal {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+  background: #fff;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:horizontal:hover {
   background: #e6e4e4;
   cursor: pointer;
 }

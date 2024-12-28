@@ -37,7 +37,7 @@ export default function Page() {
       {bannerFiles.map((componentName) => {
         return (
           <ComponentPage
-          className="grid-center"
+            className="grid-center"
             key={componentName}
             directory={bannerDir}
             componentName={componentName}

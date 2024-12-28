@@ -149,7 +149,7 @@ export default function Home() {
         </p>,
       ],
       commands: [
-        { type: "npx", text: "install -D tailwindcss postcss autoprefixer" },
+        { type: "npm", text: "install -D tailwindcss postcss autoprefixer" },
         { type: "npx", text: "tailwindcss init -p" },
       ],
       codeBlocks: [
